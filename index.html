@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>ENVELO | Paczkomat</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <img src="img/Envelo-logo.png" alt="Envelo logo">
+        <p>Możesz mieć swoją przesyłkę w kilkanaście sekund.<br>
+        Rozpocznij klikając w przycisk.</p>
+        <div id="inputs" class="invisible">
+            <input id="phone" placeholder="Twój numer telefonu"></input>
+            <input id="code" placeholder="Kod odbioru"></input>
+        </div>
+        <button class="getParcel">Odbierz paczkę</button>
+        <div id="alert"></div>
+        <div id="success" class="invisible">
+            <h2>Paczka odebrana!</h2>
+            <div>Zrobileś to w <span id="secs"></span> sekund!<br>
+            Czy możemy zrobić dla Ciebie coś jeszcze?</div>
+            <button><a href="index.html">To wszystko na dziś</a></button>
+            <button id="nextParcel">Odbierz kolejną paczkę</button>
+            </div>
+        
+    <script src="script.js"></script>
+    </body>
+</html>
