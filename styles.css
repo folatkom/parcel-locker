@@ -113,6 +113,7 @@ a:hover,a:active,a:visited{
     }
     #phone,#code{
         height: 40px;
+        font-size: 24px;
     }
     input::placeholder{
         font-size: 20px;
