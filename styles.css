@@ -7,7 +7,7 @@ body{
     padding-top: 15vh;
     text-align: center;
     font-size: 18px;
-    background-color: rgb(230, 255, 255, 0.5);
+    background-color: rgb(230, 255, 255, 0.3);
 }
 .invisible{
     display: none;
@@ -45,4 +45,21 @@ a{
 a:hover,a:active,a:visited{
     text-decoration: none;
 }
-
+.modal {
+    display: block;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+.modal-content{
+    background-color: #FFF;
+    margin: calc(15vh + 95px) auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 600px;
+}

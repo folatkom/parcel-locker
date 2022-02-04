@@ -23,20 +23,14 @@ const getNextParcel = () => {
     secCounter();
     document.getElementById('phone').value = '';
     document.getElementById('code').value = '';
-    inputs.classList.remove('invisible');
-    inputs.classList.add('visible');
-    getParcel.classList.remove('invisible');
-    success.classList.add('invisible'); 
-    successImg.classList.add('invisible')
+    successImg.classList.add('invisible');
+    success.classList.remove('modal')
     getParcel.addEventListener('click', showInputs);
 }
 
 const validate = () => {
     if(regexPhone.test(phone) && regexCode.test(code)){
-        inputs.classList.add('invisible');
-        inputs.classList.remove('visible');
-        success.classList.remove('invisible'); 
-        getParcel.classList.add('invisible');
+        success.classList.add('modal')
         successImg.classList.remove('invisible');
         alert.innerHTML = '';
         secsSum.innerHTML = secs;
