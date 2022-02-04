@@ -105,9 +105,6 @@ a:hover,a:active,a:visited{
     .img-responsive{
         width: 70%;
     }
-    button{
-        font-size: 26px;
-    }
     .visible{
         flex-direction: column;
     }
