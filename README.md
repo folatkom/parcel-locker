@@ -1,22 +1,22 @@
-#parcel-locker
+# parcel-locker
 
-##General info
+## General info
 
 This project presents a simulation of a parcel locker.
-##Technologies
+## Technologies
 
 This project is crated with HTML, CSS, JavaScript and Jest.
 
-##Setup
+## Setup
 
 To run this project and tests, you need to have npm and jest installed.
 
-##Test script
+## Test script
 
 To run tests, in the project directory, you can run:
 
-###npm init -y
+### `npm init -y`
 
-###npm i --save-dev jest
+### `npm i --save-dev jest`
 
-###npx jest
+### `npx jest`
