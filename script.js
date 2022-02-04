@@ -5,6 +5,7 @@ const success = document.getElementById('success');
 const nextParcel = document.getElementById('nextParcel');
 const secsSum = document.getElementById('secsSum');
 const successImg = document.getElementById('successImg');
+const loader = document.getElementById('loader')
 let phone;
 let code;
 let isClicked = false;
@@ -12,6 +13,17 @@ const regexCode = /^\d{4}$/;
 const regexPhone = /^(\d{9}|\d{3}[-\s]\d{2}[-\s]\d{2}[-\s]\d{2})$/;
 let secs = -1;
 let timer;
+
+const mockAPI = () => {
+    return new Promise((resolve, reject) => {
+        loader.classList.add('modal');
+        setTimeout( ()=> {
+            loader.classList.remove('modal');
+            showInputs();
+            resolve();
+        }, 1000);
+    })
+}
 
 const secCounter = () => {
     secs += 1;
@@ -67,5 +79,4 @@ const showInputs = () => {
     }
 }
 
-getParcel.addEventListener('click', showInputs);
-
+getParcel.addEventListener('click', mockAPI);
