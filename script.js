@@ -1,11 +1,12 @@
 const getParcel = document.querySelector('.getParcel');
 const inputs = document.getElementById('inputs');
-const alert = document.getElementById('alert');
+const validationError = document.getElementById('validationError');
 const success = document.getElementById('success');
 const nextParcel = document.getElementById('nextParcel');
 const secsSum = document.getElementById('secsSum');
 const successImg = document.getElementById('successImg');
-const loader = document.getElementById('loader')
+const loader = document.getElementById('loader');
+const buttonLoader = document.getElementById('buttonLoader');
 let phone;
 let code;
 let isClicked = false;
@@ -15,14 +16,23 @@ let secs = -1;
 let timer;
 
 const mockAPI = () => {
-    return new Promise((resolve, reject) => {
+    if(isClicked == false){
         loader.classList.add('modal');
         setTimeout( ()=> {
             loader.classList.remove('modal');
             showInputs();
-            resolve();
+        }, 1000); 
+    }
+    else{
+        validationError.innerHTML = '';
+        buttonLoader.classList.remove('invisible');
+        getParcel.classList.add('invisible');            
+        setTimeout( ()=> {
+            buttonLoader.classList.add('invisible');
+            getParcel.classList.remove('invisible');
+            validate();  
         }, 1000);
-    })
+    }
 }
 
 const secCounter = () => {
@@ -36,15 +46,15 @@ const getNextParcel = () => {
     document.getElementById('phone').value = '';
     document.getElementById('code').value = '';
     successImg.classList.add('invisible');
-    success.classList.remove('modal')
-    getParcel.addEventListener('click', showInputs);
+    success.classList.remove('modal');
 }
 
 const validate = () => {
+    phone = document.getElementById('phone').value;
+    code = document.getElementById('code').value;
     if(regexPhone.test(phone) && regexCode.test(code)){
-        success.classList.add('modal')
+        success.classList.add('modal');
         successImg.classList.remove('invisible');
-        alert.innerHTML = '';
         secsSum.innerHTML = secs;
         window.clearTimeout(timer);
         nextParcel.addEventListener('click', getNextParcel);
@@ -52,31 +62,23 @@ const validate = () => {
     else{
         if(regexPhone.test(phone) == false){
             if(regexCode.test(code)){
-                alert.innerHTML = 'Podano nieprawidłowy numer telefonu.'
+                validationError.innerHTML = 'Podano nieprawidłowy numer telefonu.';
             }
             else{
-                alert.innerHTML = 'Podano nieprawidłowy numer telefonu i kod odbioru.'
+                validationError.innerHTML = 'Podano nieprawidłowy numer telefonu i kod odbioru.';
             }
         } 
         else{
-            alert.innerHTML = 'Podano nieprawidłowy kod odbioru.'
-        }
-        getParcel.addEventListener('click', validate);       
+            validationError.innerHTML = 'Podano nieprawidłowy kod odbioru.';
+        }    
     }
 }
 
 const showInputs = () => {
-    if(isClicked == false){
-        secCounter();
-        inputs.classList.remove('invisible');
-        inputs.classList.add('visible');
-        isClicked = true;
-    }
-    else {
-        phone = document.getElementById('phone').value;
-        code = document.getElementById('code').value;
-        validate(); 
-    }
+    isClicked = true;
+    secCounter();
+    inputs.classList.remove('invisible');
+    inputs.classList.add('visible');
 }
 
 getParcel.addEventListener('click', mockAPI);

@@ -46,7 +46,7 @@ a{
 a:hover,a:active,a:visited{
     text-decoration: none;
 }
-.modal {
+.modal{
     display: block;
     position: fixed; 
     z-index: 1;
@@ -57,21 +57,31 @@ a:hover,a:active,a:visited{
     overflow: auto; 
     background-color: rgba(0,0,0,0.4); 
 }
-.modal-content{
+#modalContent{
     background-color: #FFF;
     margin: calc(15vh + 95px) auto;
     padding: 30px;
     border: 1px solid #888;
     width: 600px;
 }
-
-.modal-loader{
+.modalLoaderContent{
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border: 10px solid #FFF;
     border-color: #FFF transparent #FFF transparent;
     margin: 400px auto;
+    animation: rotate 1s 0s infinite both linear;
+}
+#buttonLoader{
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    margin: 15px auto;
+    box-shadow: none;
+    border: 5px solid #005171;
+    border-color: #005171 transparent #005171 transparent;
+    background-color: rgb(230, 255, 255, 0.3);
     animation: rotate 1s 0s infinite both linear;
 }
 @keyframes rotate {
