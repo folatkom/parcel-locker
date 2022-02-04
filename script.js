@@ -11,7 +11,7 @@ let phone;
 let code;
 let isClicked = false;
 const regexCode = /^\d{4}$/;
-const regexPhone = /^(\d{9}|\d{3}[-\s]\d{2}[-\s]\d{2}[-\s]\d{2})$/;
+const regexPhone = /^(\d{9}|\d{3}[-\s]\d{2}[-\s]\d{2}[-\s]\d{2}|\d{3}[-\s]\d{3}[-\s]\d{3})$/;
 let secs = -1;
 let timer;
 
