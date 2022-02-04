@@ -4,7 +4,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    padding-top: 15vh;
+    padding: 15vh 5vw;
     text-align: center;
     font-size: 18px;
     background-color: rgb(230, 255, 255, 0.3);
@@ -90,5 +90,25 @@ a:hover,a:active,a:visited{
     }
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@media (max-width:767px){
+    #modalContent{
+        width: 80%;
+    }
+}
+@media (max-width:575px){
+    body{
+        padding-top: 5vh;
+    }
+    .img-responsive{
+        width: 70%;
+    }
+    .visible{
+        flex-direction: column;
+    }
+    #modalContent{
+        margin-top: calc(5vh + 95px);
     }
 }
