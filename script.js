@@ -3,13 +3,23 @@ const inputs = document.getElementById('inputs');
 const alert = document.getElementById('alert');
 const success = document.getElementById('success');
 const nextParcel = document.getElementById('nextParcel');
+const secsSum = document.getElementById('secsSum');
 let phone;
 let code;
 let isClicked = false;
 const regexCode = /^\d{4}$/;
 const regexPhone = /^(\d{9}|\d{3}[-\s]\d{2}[-\s]\d{2}[-\s]\d{2})$/;
+let secs = -1;
+let timer;
+
+const secCounter = () => {
+    secs += 1;
+    timer = setTimeout(()=>secCounter(),1000);
+}
 
 const getNextParcel = () => {
+    secs = -1;
+    secCounter();
     document.getElementById('phone').value = '';
     document.getElementById('code').value = '';
     inputs.classList.remove('invisible');
@@ -26,6 +36,8 @@ const validate = () => {
         success.classList.remove('invisible'); 
         getParcel.classList.add('invisible');
         alert.innerHTML = '';
+        secsSum.innerHTML = secs;
+        window.clearTimeout(timer);
         nextParcel.addEventListener('click', getNextParcel);
     }
     else{
@@ -46,6 +58,7 @@ const validate = () => {
 
 const showInputs = () => {
     if(isClicked == false){
+        secCounter();
         inputs.classList.remove('invisible');
         inputs.classList.add('visible');
         isClicked = true;
@@ -58,3 +71,4 @@ const showInputs = () => {
 }
 
 getParcel.addEventListener('click', showInputs);
+
