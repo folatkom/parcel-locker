@@ -4,6 +4,7 @@ const alert = document.getElementById('alert');
 const success = document.getElementById('success');
 const nextParcel = document.getElementById('nextParcel');
 const secsSum = document.getElementById('secsSum');
+const successImg = document.getElementById('successImg');
 let phone;
 let code;
 let isClicked = false;
@@ -26,6 +27,7 @@ const getNextParcel = () => {
     inputs.classList.add('visible');
     getParcel.classList.remove('invisible');
     success.classList.add('invisible'); 
+    successImg.classList.add('invisible')
     getParcel.addEventListener('click', showInputs);
 }
 
@@ -35,6 +37,7 @@ const validate = () => {
         inputs.classList.remove('visible');
         success.classList.remove('invisible'); 
         getParcel.classList.add('invisible');
+        successImg.classList.remove('invisible');
         alert.innerHTML = '';
         secsSum.innerHTML = secs;
         window.clearTimeout(timer);
