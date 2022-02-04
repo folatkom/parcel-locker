@@ -1,0 +1,27 @@
+{
+  "name": "envelo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.4.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/folatkom/parcel-locker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/folatkom/parcel-locker/issues"
+  },
+  "homepage": "https://github.com/folatkom/parcel-locker#readme"
+}
